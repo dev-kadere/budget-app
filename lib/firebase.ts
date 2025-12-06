@@ -10,6 +10,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -74,3 +75,5 @@ export {
   logoutUser,
   resetPassword,
 };
+
+export const db = getFirestore(app);
