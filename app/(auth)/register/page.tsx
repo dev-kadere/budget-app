@@ -40,53 +40,49 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md bg-white p-6 rounded-xl shadow space-y-4">
-        <h1 className="text-2xl font-bold text-center">Create an account</h1>
+    <div className="w-full max-w-md space-y-6">
+      <h1 className="text-2xl font-bold text-center">Create an account</h1>
 
-        {error && (
-          <p className="bg-red-100 text-red-700 p-2 rounded">{error}</p>
-        )}
+      {error && <p className="bg-red-100 text-red-700 p-2 rounded">{error}</p>}
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="border p-2 w-full rounded"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+      <input
+        type="email"
+        placeholder="Email"
+        className="w-full rounded-xl border border-secondary p-2 focus:outline-none focus:ring-2 focus:ring-secondary"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="border p-2 w-full rounded"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <input
+        type="password"
+        placeholder="Password"
+        className="w-full rounded-xl border border-secondary p-2 focus:outline-none focus:ring-2 focus:ring-secondary"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
 
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          className="border p-2 w-full rounded"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        className="w-full rounded-xl border border-secondary p-2 focus:outline-none focus:ring-2 focus:ring-secondary"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+      />
 
-        <button
-          onClick={handleRegister}
-          disabled={loading}
-          className="bg-black text-white w-full p-2 rounded hover:bg-gray-800 transition"
-        >
-          {loading ? "Creating account..." : "Register"}
-        </button>
+      <button
+        onClick={handleRegister}
+        disabled={loading}
+        className="bg-secondary text-white w-full p-2 rounded-xl hover:bg-gray-800 transition"
+      >
+        {loading ? "Creating account..." : "Register"}
+      </button>
 
-        <p className="text-center">
-          Already have an account?{" "}
-          <Link href="/login" className="text-blue-600 underline">
-            Login
-          </Link>
-        </p>
-      </div>
+      <p className="text-center">
+        Already have an account?{" "}
+        <Link href="/login" className="text-blue-600 underline">
+          Login
+        </Link>
+      </p>
     </div>
   );
 }
