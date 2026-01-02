@@ -1,5 +1,6 @@
 "use client";
 
+import StatsCard from "@/components/shared/StatsCard";
 import { useTransactions } from "@/hooks/useTransactions";
 
 export default function DashboardPage() {
@@ -18,18 +19,9 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-green-200 p-4 rounded text-center">
-          <p className="text-lg font-semibold">Income</p>
-          <p className="text-xl font-bold">ksh{income}</p>
-        </div>
-        <div className="bg-red-200 p-4 rounded text-center">
-          <p className="text-lg font-semibold">Expenses</p>
-          <p className="text-xl font-bold">ksh{expenses}</p>
-        </div>
-        <div className="bg-blue-200 p-4 rounded text-center">
-          <p className="text-lg font-semibold">Balance</p>
-          <p className="text-xl font-bold">ksh{balance}</p>
-        </div>
+        <StatsCard title="Income" value={income} />
+        <StatsCard title="Expenses" value={expenses} />
+        <StatsCard title="Balance" value={balance} />
       </div>
 
       <div>
